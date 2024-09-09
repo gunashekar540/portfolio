@@ -3,27 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gunafolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Gunafolio</title>
 </head>
 <body>
     <div class="container">
         <nav>
             <div class="logo">Gunafolio<b>.</b></div>
             <ul class="navItems">
-                <li><a href="">home</a></li>
-                <li><a href="">about</a></li>
-                <li><a href="">skills</a></li>                    
-                <li><a href="">projects</a></li>
+                <li><a href="#">home</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">skills</a></li>                    
+                <li><a href="#">projects</a></li>
             </ul>
-        <div class="links">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-        </div>
+            <div class="links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
         </nav>
         <div class="wrapper">
             <div class="cols cols0">
@@ -42,15 +41,26 @@
             </div>
         </div>
     </div>
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-<script>
-    var typingEffect = new Typed(".multiText",{
-        strings : ["Guna Shekar","a coder","a developer","a designer"],
-        loop : true,
-        typeSpeed : 100,
-        backSpeed : 80,
-        backDelay : 1500
-    })
-</script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typingEffect = new Typed(".multiText", {
+            strings: ["Guna Shekar", "a coder", "a developer", "a designer"],
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 80,
+            backDelay: 1500
+        });
+
+        // Adding mouse interaction for page rotation
+        document.body.addEventListener('mousemove', (e) => {
+            let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            document.body.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        document.body.addEventListener('mouseleave', () => {
+            document.body.style.transform = 'rotate(0)';
+        });
+    </script>
 </body>
 </html>

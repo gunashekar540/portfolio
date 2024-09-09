@@ -1,19 +1,29 @@
-@import url('https://fonts.gooleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
-body{
+
+body {
     overflow: hidden;
+    transform: rotate(-3deg); /* Initial slight rotation */
+    transition: transform 0.5s ease-in-out;
 }
-.container{
+
+body:hover {
+    transform: rotate(0deg); /* Return to normal on hover */
+}
+
+.container {
     width: 100%;
     min-height: 100vh;
     background-color: #f3f5f8;
 }
-nav{
+
+nav {
     display: flex;
     width: 100%;
     justify-content: space-around;
@@ -21,7 +31,8 @@ nav{
     line-height: 80px;
     z-index: 111;
 }
-.logo{
+
+.logo {
     display: flex;
     font-size: 40px;
     font-weight: 800;
@@ -30,45 +41,79 @@ nav{
     cursor: pointer;
     text-transform: uppercase;
 }
-b{
+
+b {
     font-size: 70px;
     color: #7f00ff;
 }
-.navItems{
+
+.navItems {
     display: flex;
 }
-.navItems li{
+
+.navItems li {
     list-style: none;
     margin: 0 15px;
 }
+
 .navItems li a {
     font-size: 25px;
     letter-spacing: 3px;
     color: #3d535f;
     text-decoration: none;
     text-transform: capitalize;
+    position: relative;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
-.navItems li:hover a{
+
+.navItems li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #7f00ff;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.navItems li a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.navItems li:hover a {
     color: #7f00ff;
+    transform: scale(1.1); /* Scale effect on hover */
 }
-.links a{
+
+.links a {
     font-size: 30px;
     color: #3d535f;
     margin: 25px 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
+
 .links a:hover .fa-linkedin {
-    color: #0077B5;
+    color: #0077B5; /* LinkedIn Blue */
 }
+
 .links a:hover .fa-instagram {
-    color: #E1306C;
+    color: #E1306C; /* Instagram Pink */
 }
+
 .links a:hover .fa-twitter {
-    color: #1DA1F2;
+    color: #1DA1F2; /* Twitter Blue */
 }
+
 .links a:hover .fa-github {
-    color: #333;
+    color: #333; /* GitHub Black */
 }
-.wrapper{
+
+.wrapper {
     display: flex;
     width: 100%;
     height: 100vh;
@@ -76,8 +121,10 @@ b{
     align-items: center;
     padding: 0 10%;
     overflow: hidden;
+    position: relative;
 }
-.wrapper::before{
+
+.wrapper::before {
     position: absolute;
     content: '';
     height: 500px;
@@ -85,10 +132,11 @@ b{
     border-radius: 50%;
     left: -12%;
     top: 35%;
-    background: linear-gradient(45deg,#7f00ff,pink);
+    background: linear-gradient(45deg, #7f00ff, pink);
     animation: object1 6s linear infinite;
 }
-.wrapper::after{
+
+.wrapper::after {
     position: absolute;
     content: '';
     height: 150px;
@@ -96,35 +144,41 @@ b{
     border-radius: 50%;
     left: 35%;
     top: 12%;
-    background: linear-gradient(45deg,#7f00ff,pink);
+    background: linear-gradient(45deg, #7f00ff, pink);
     animation: object2 6s linear infinite;
 }
-@keyframes object1{
-    50%{
+
+@keyframes object1 {
+    50% {
         left: -13%;
         top: 41%;
     }
 }
-@keyframes object2{
-    50%{
+
+@keyframes object2 {
+    50% {
         left: 35%;
         top: 10%;
     }
 }
-.cols{
+
+.cols {
     width: 50%;
 }
-.cols0{
+
+.cols0 {
     z-index: 5;
 }
-.topline{
+
+.topline {
     display: block;
     position: relative;
     font-size: 35px;
     letter-spacing: 5px;
     color: #3d535f;
 }
-.topline::after{
+
+.topline::after {
     position: absolute;
     content: '';
     height: 4px;
@@ -132,28 +186,26 @@ b{
     bottom: 10px;
     background-color: #7f00ff;
 }
-h1{
+
+h1 {
     display: block;
     font-size: 7rem;
     font-weight: 900;
     color: #3d535f;
 }
-.multiText{
-    color:#7f00ff ;
+
+.multiText {
+    color: #7f00ff;
     text-transform: capitalize;
 }
-p{
-    display: block;
-    width: 90%;
-    font-size: 1.2rem;
-    color: #3d535f;
-}
-.btns{
+
+.btns {
     width: 100%;
     position: relative;
     left: 150px;
 }
-button{
+
+button {
     outline: none;
     border: none;
     cursor: pointer;
@@ -165,11 +217,13 @@ button{
     margin: 40px 5px;
     letter-spacing: 2px;
     text-transform: capitalize;
-    box-shadow: 0px 15px 10px rgba(0,0,0,0.4);
+    box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.4);
 }
-button:hover{
+
+button:hover {
     background-color: #7f00ff;
 }
+
 .imgbox {
     position: relative;
     width: 100%;
@@ -181,17 +235,17 @@ button:hover{
 
 #img {
     position: relative;
-    width: 350px; /* Adjust width based on your reference */
-    top: 0px; /* Initial vertical position */
-    right: 50px; /* Initial horizontal position */
-    z-index: 2; /* Bring profile image to front */
-    animation: animateUser 4s linear infinite; /* Animate movement */
+    width: 350px;
+    top: 0px;
+    right: 50px;
+    z-index: 2;
+    animation: animateUser 4s linear infinite;
 }
 
 @keyframes animateUser {
     50% {
-        right: 30px; /* Shift position during animation */
-        top: -50px; /* Slight upward movement during animation */
+        right: 30px;
+        top: -50px;
     }
 }
 
@@ -199,17 +253,128 @@ button:hover{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-35deg); /* Center and rotate */
-    width: 100%; /* Full width of the container */
-    filter: saturate(200%); /* Make colors more vibrant */
-    z-index: 1; /* Place behind the profile */
-    animation: animate 4s linear infinite; /* Animate splash */
+    transform: translate(-50%, -50%) rotate(-35deg);
+    width: 100%;
+    filter: saturate(200%);
+    z-index: 1;
+    animation: animate 4s linear infinite;
 }
 
 @keyframes animate {
     50% {
-        top: 49%; /* Small vertical movement */
-        left: 51%; /* Small horizontal movement */
-        width: 120%; /* Slightly increase size during animation */
+        top: 49%;
+        left: 51%;
+        width: 120%;
+    }
+}
+
+/* For tablets (screen width up to 768px) */
+@media (max-width: 768px) {
+    body{
+        overflow: scroll;
+    }
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .navItems {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navItems li {
+        margin: 10px 0;
+    }
+
+    .navItems li a {
+        font-size: 20px;
+    }
+
+    .links a {
+        font-size: 25px;
+        margin: 15px 5px;
+    }
+
+    .wrapper {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .cols {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    .btns {
+        left: 0;
+        text-align: center;
+    }
+
+    .btns button {
+        margin: 20px;
+        font-size: 20px;
+    }
+
+    #img {
+        width: 300px;
+    }
+
+    #splash {
+        width: 250px;
+    }
+}
+
+/* For mobile phones (screen width up to 480px) */
+@media (max-width: 480px) {
+    body{
+        overflow: scroll;
+    }
+    nav {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+    b{
+        font-size: 18px;
+    }
+    .navItems li a {
+        font-size: 18px;
+    }
+
+    .wrapper {
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .topline {
+        font-size: 25px;
+    }
+
+    .btns button {
+        font-size: 18px;
+        margin: 15px;
+    }
+
+    #img {
+        width: 200px;
+    }
+
+    #splash {
+        width: 180px;
     }
 }
