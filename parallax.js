@@ -10,4 +10,8 @@ window.addEventListener('scroll',()=>{
     treeRight.style.left = value *1.5 + 'px';
     gateLeft.style.left = value *0.5 + 'px';
     gateRight.style.left = value *-0.5 + 'px';
+    const scrollContainer = document.querySelector('.scroll-container');
+        if (window.scrollY > 100) { // Adjust the scrollY value as needed
+            scrollContainer.classList.add('hidden');
+        }
 })
