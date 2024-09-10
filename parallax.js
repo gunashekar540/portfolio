@@ -1,17 +1,25 @@
-let text =document.getElementById('text');
-let treeLeft =document.getElementById('tree-left');
-let treeRight =document.getElementById('tree-right');
-let gateLeft =document.getElementById('gate-left');
-let gateRight =document.getElementById('gate-right');
-window.addEventListener('scroll',()=>{
-    let value = window.scrollY;
-    text.style.marginTop = value *2.5 + 'px';
-    treeLeft.style.left = value *-1.5 + 'px';
-    treeRight.style.left = value *1.5 + 'px';
-    gateLeft.style.left = value *0.5 + 'px';
-    gateRight.style.left = value *-0.5 + 'px';
+let listBg = document.querySelectorAll('.bg');
+let listTab = document.querySelectorAll('.tab');
+let titleBanner = document.querySelector('.banner h1');
+window.addEventListener("scroll", (event) => {
     const scrollContainer = document.querySelector('.scroll-container');
-        if (window.scrollY > 100) { // Adjust the scrollY value as needed
+        if (window.scrollY > 100) { 
             scrollContainer.classList.add('hidden');
         }
-})
+    let top = this.scrollY;
+    listBg.forEach((bg, index) => {
+        if(index != 0 && index != 8){
+            bg.style.transform = `translateY(${(top*index/2)}px)`;
+        }else if(index == 0){
+            bg.style.transform = `translateY(${(top/3)}px)`;
+        }
+    })
+    titleBanner.style.transform = `translateY(${(top*4/2)}px)`;
+    listTab.forEach(tab =>{
+        if(tab.offsetTop - top < 550){
+            tab.classList.add('active');
+        }else{
+            tab.classList.remove('active');
+        }
+    })
+});  

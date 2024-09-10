@@ -1,26 +1,130 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 body{
+    margin :0;
+    background-color: #210002;
+    font-family: Poppins,sans-serif;
+    font-size: 15px;
     min-height: 100vh;
     overflow-x: hidden;
+}
+.banner{
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.banner .bg{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-size: auto 100%;
+    background-position: center bottom;
+    transition: 0.1s;
+}
+.banner .bg-1{
+    background-image: url('imgs/0.png');
+}
+.banner .bg-2{
+    background-image: url('imgs/1.png');
+}
+.banner .bg-3{
+    background-image: url('imgs/2.png');
+}
+.banner .bg-4{
+    background-image: url('imgs/3.png');
+}
+.banner .bg-5{
+    background-image: url('imgs/4.png');
+}
+.banner .bg-6{
+    background-image: url('imgs/5.png');
+}
+.banner .bg-7{
+    background-image: url('imgs/6.png');
+}
+.banner .bg-8{
+    background-image: url('imgs/7.png');
+}
+.banner .bg-9{
+    background-image: url('imgs/8.png');
+}
+.banner  h1{
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 11rem;
+    font-family: 'Pacifico', cursive;
+    color: #fff;
+}
+.intro{
+    min-height: 70vh;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.intro img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
+.intro p{
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: 300;
+    text-align: justify;
+    padding: 20px;
+    line-height: 25px;
+}
+.intro button{
+    background-color: #FD0003;
+    padding: 10px 50px;
+    border: 1px solid #591F1D;
+    border-radius: 5px;
+    color: #fff;
+    font-family: Poppins;
+    font-weight: 800;
+    font-size: 1.2em;
+}
+.intro button:hover{
+    cursor: pointer;
+    background-color: #fff;
+    color: #FD0003;
+}
+.animation-show{
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 0.7s;
+}
+.active .animation-show{
+    transform: translateY(0);
+    opacity: 1;
+}
+.animation-show:nth-child(2){
+    transition-delay: 0.3s;
+}
+.animation-show:nth-child(3){
+    transition-delay: 0.6s;
+}
+.animation-show:nth-child(4){
+    transition-delay: 0.9s;
 }
 header{
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
-    padding: 30px 100px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     z-index: 100;
+    padding: 0px 70px;
 }
 .logo{
+    /* padding: 30px; */
+    margin-right: 800px;
     font-size: 2em;
     color: #fff;
     user-select: none;
@@ -53,79 +157,6 @@ header{
     transform: scale(1);
     opacity: 1;
 }
-.parallax{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    z-index: 0;
-    background: url('background.png') no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-#background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    opacity: 0.4; /* Adjust opacity to see both video and image */
-}
-#thunder-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: 2; /* Place above background video, but still behind the image */
-    object-fit: cover;
-    opacity: 0.3; /* Lower opacity for a subtle effect */
-}
-#text{
-    position: absolute;
-    font-size: 5em;
-    color: #1b283a;
-    text-shadow: 2px 4px 5px #f9f9f9;
-    z-index: 3;
-}
-.parallax img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    pointer-events: none;
-    z-index: 3;
-}
-.parallax img#gate-left{
-    position: fixed;
-    transform: translateX(-282px);
-
-}
-.parallax img#gate-right{
-    position: fixed;
-    transform: translateX(305px);
-}
-.sec{
-    position: relative;
-    background: #020912;
-    padding: 30px 100px;
-}
-.sec h2{
-    font-size: 3em;
-    color: #fff;
-    margin-bottom: 20px;
-}
-.sec p{
-    font-size: 1em;
-    color: #fff;
-    font-weight: 300;
-    text-align: justify;
-}
-/* Scroll Down Styling */
 .scroll-container {
     position: absolute;
     bottom: 50px;
@@ -183,100 +214,24 @@ header{
     visibility: hidden;
     transition: opacity 0.5s ease-out;
 }
-
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-    header {
-        padding: 20px 50px;
+@media screen and (max-width: 768px){
+    .banner h1{
+        font-size: 5rem;
     }
-
-    .logo {
-        font-size: 1.5em;
+}
+@media screen and (max-width: 576px) {
+    header{
+        display: flex;
+        padding: 0px 0px;
+        top: 20px;
+        right: 0;
+        
     }
-
-    .navigation a {
-        font-size: 0.9em;
-        padding: 5px 10px;
-    }
-
-    #text {
-        font-size: 3em;
-    }
-
-    .sec {
-        padding: 20px 50px;
-    }
-
-    .sec h2 {
-        font-size: 2em;
-    }
-
-    .sec p {
-        font-size: 0.9em;
-    }
-
-    .parallax img#gate-left,
-    .parallax img#gate-right,
-    .parallax img#grass {
+    .logo{
         display: none;
     }
-    /* .scroll {
-        width: 50px;
-        height: 50px;
-    }
-
-    #scrolltext {
-        font-size: 0.85em;
-    } */
-}
-@media (max-width: 480px) {
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
-    }
-
-    .navigation {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
     .navigation a {
-        margin: 10px 0;
-        font-size: 1em;
+        font-size: 1em; /* Adjust font size */
+        padding: 6px 10px; /* Adjust padding */
     }
-
-    .parallax {
-        height: 70vh;
-    }
-
-    #text {
-        font-size: 2.5em;
-    }
-
-    .sec {
-        padding: 10px 20px;
-    }
-
-    .sec h2 {
-        font-size: 1.5em;
-    }
-
-    .sec p {
-        font-size: 0.85em;
-    }
-    .parallax img#gate-left,
-.parallax img#gate-right,
-.parallax img#grass {
-    display: none;
-}
-.scroll {
-    display: none;
-}
-
-#scrolltext {
-    display: none;
-}
 }

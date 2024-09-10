@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax About</title>
+    <title>Document</title>
     <link rel="stylesheet" href="parallax.css">
 </head>
 <body>
@@ -11,38 +12,40 @@
         <h2 class="logo">Gunafolio <b>.</b></h2>
         <nav class="navigation">
             <a href="/index.html">Home<span></span></a>
-            <a href="#" class="active">About<span></span></a>
-            <a href="#">Skills<span></span></a>
+            <a href="/parallax.html" class="active">About<span></span></a>
+            <a href="/skills.html">Skills<span></span></a>
             <a href="#">Projects<span></span></a>
         </nav>
     </header>
-    <section class="parallax">
-        <video autoplay muted loop id="background-video">
-            <source src="background-video.mp4" type="video/mp4">
-        </video>
-        <video autoplay muted loop id="thunder-video">
-            <source src="thunder.mp4" type="video/mp4">
-        </video>
-        <h2 id="text">Guna Shekar</h2>
-        <img src="tree-left.png" id="tree-left">
-        <img src="tree-right.png" id="tree-right">
-        <img src="gate-left.png" id="gate-left">
-        <img src="gate-right.png" id="gate-right">
-        <img src="grass.png" id="grass">
+    <div class="banner">
+        <div class="bg bg-1"></div>
+        <div class="bg bg-2"></div>
+        <div class="bg bg-3"></div>
+        <h1>Guna Shekar!</h1>
+        <div class="bg bg-4"></div>
+        <div class="bg bg-5"></div>
+        <div class="bg bg-6"></div>
+        <div class="bg bg-7"></div>
+        <div class="bg bg-8"></div>
+        <div class="bg bg-9"></div>
         <div class="scroll-container">
             <div class="scroll"></div>
             <h4 id="scrolltext">Scroll Down</h4>
         </div>
-    </section>
-    <section class="sec">
-        <h2>About Me</h2>
-        <p>I am a dedicated and versatile full stack web developer with a passion for creating efficient and user-friendly web applications.
+    </div>
+    <div class="tab intro">
+        <h2 class="animation-show">About Me</h2>
+        <img src="logo.jpg" alt="" class="animation-show">
+        <p class="animation-show">
+            I am a dedicated and versatile full stack web developer with a passion for creating efficient and user-friendly web applications.
              With 4 years of experience, I have worked with a variety of technologies, including React, Next.js, Express.js, Node.js, MySQL, 
              PostgreSQL, Firebase and MongoDB. My journey in web development began with a deep curiosity for how things work, and it has 
              evolved into a career where I continuously strive to learn and adapt to new challenges. I thrive in collaborative environments 
              and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I enjoy staying active, exploring new 
-             technologies, and contributing to open-source projects. <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
-    </section>
-    <script src="parallax.js"></script>   
+             technologies, and contributing to open-source projects. 
+        </p>
+        <button class="animation-show" onclick="window.location.href='https://www.linkedin.com/in/dasari-guna-shekar-venkata-sai-881531286/'">Connect</button>
+    </div>
+    <script src="parallax.js"></script>
 </body>
 </html>
