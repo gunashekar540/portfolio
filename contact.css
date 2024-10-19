@@ -12,6 +12,8 @@ body {
     font-family: Poppins;
 }
 
+/* This is a dummy comment */
+
 .contact-container {
     display: flex;
     justify-content: space-between;
