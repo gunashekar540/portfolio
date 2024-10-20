@@ -138,7 +138,7 @@ header a{
 
 .carousel .list .item.disney{
     .title{
-        color: #081F4D;
+        color: blue;
     }
     .topic{
         color: #B0C4DE;
@@ -354,8 +354,16 @@ header a{
 @media screen and (max-width: 678px) {
     .carousel .list .item .content{
         padding-right: 0;
+        top: 15%;
     }
     .carousel .list .item .content .title{
-        font-size: 30px;
+        font-size: 24px;
+    }
+    header a {
+        margin-right: 10px; 
+        font-size: 12px; 
+    }
+    .carousel .list .item .content .topic {
+        font-size: 38px; /* Adjust topic size for mobile */
     }
 }
