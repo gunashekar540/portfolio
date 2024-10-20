@@ -337,7 +337,7 @@ button:hover {
 /* For mobile phones (screen width up to 480px) */
 @media (max-width: 480px) {
     body {
-        overflow: scroll;
+        overflow: hidden;
         padding: 0;
         margin: 0;
     }
